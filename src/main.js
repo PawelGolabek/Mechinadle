@@ -1,35 +1,44 @@
 import './style.css';
 
 document.querySelector('#app').innerHTML = `
-  <div>
-    <h1>Mechinadle</h1>
+  <div class ="container">
     <div class="main">
-      <div class="lyrics">
-      <p>Lyrics:</p>
-        <p id="lyrics0"></p>
-        <p id="lyrics1"></p>
-        <p id="lyrics2"></p>
-        <p id="lyrics3"></p>
-        <p id="lyrics4"></p>
-        <p id="lyrics5"></p>
+      <img src = "e.png" alt = "Tessera"  class="sideImage">
+      <div class="center">
+        <div class ="header">
+          <h1>Mechinadle</h1>
+        </div>
+      <div class="center2">
+        <br>
+        <div class="lyrics">
+          <p>Lyrics:</p>
+            <p id="lyrics0"></p>
+            <p id="lyrics1"></p>
+            <p id="lyrics2"></p>
+            <p id="lyrics3"></p>
+            <p id="lyrics4"></p>
+            <p id="lyrics5"></p>
+          </div>
+          <div class="hints">
+            <p id = "guesses", class="guesses">Your guesses:</p>
+            <div id="guess0"></div>
+            <div id="guess1"></div>
+            <div id="guess2"></div>
+            <div id="guess3"></div>
+            <div id="guess4"></div>
+          </div>
+          <div class="card">
+            <p>Guess the song:</p>
+            <input type="text" id="songInput" placeholder="Enter song name">
+            <button id="send" type="button">Send</button>
+            <div id="suggestions" class="suggestions-box"></div>
+            <div id="guessCount" class = "guesses">Guesses remaining: 5</div>
+            <div id="messageBox" class="message-box"></div>
+        </div>
       </div>
-      <div class="hints">
-        <p id = "guesses", class="guesses">Your guesses:</p>
-        <div id="guess0"></div>
-        <div id="guess1"></div>
-        <div id="guess2"></div>
-        <div id="guess3"></div>
-        <div id="guess4"></div>
       </div>
+      <img src = "Tessera_32.png" alt = "Tessea" class="sideImage">
     </div>
-    <div class="card">
-    <p>Guess the song:</p>
-      <input type="text" id="songInput" placeholder="Enter song name">
-      <button id="send" type="button">Send</button>
-      <div id="suggestions" class="suggestions-box"></div>
-    </div>
-    <div id="guessCount" class = "guesses">Guesses remaining: 5</div>
-    <div id="messageBox" class="message-box"></div>
 
   </div>
 `;
