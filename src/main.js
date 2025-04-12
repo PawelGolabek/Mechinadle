@@ -39,6 +39,7 @@ let currentGuesses = 0;
 const MAX_GUESSES = 5;
 let availableLines = [];
 let randomLineIndex;
+let lines = [];
 window.addEventListener('DOMContentLoaded', () => {
   
   const today = new Date().toISOString().slice(0, 10);
@@ -49,11 +50,11 @@ window.addEventListener('DOMContentLoaded', () => {
   fetch('./songs.json')
     .then((response) => response.json())
     .then((songs) => {
-      const randomIndex = Math.floor(Math.random() * songs.length);
+      const randomIndex = Math.floor(Math.random() * songs.length * 1.0) % songs.length; // Random index based on seed
       currentSong = songs[randomIndex]; // Store the random song
       
       // Get all lines from the song
-      const lines = [];
+      lines = [];
       let i = 0;
       while (currentSong[`line${i}`] !== undefined) {
         lines.push(currentSong[`line${i}`]);
@@ -70,10 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
         randomLineIndex = 0;
       }      
       
-      if (availableLines.length > 0) {
-        document.getElementById('lyrics0').innerText = availableLines[randomLineIndex ] + "\n" + availableLines[randomLineIndex + 1];
-      }
-      
+      document.getElementById('lyrics0').innerText = lines[randomLineIndex ] + "\n" + lines[randomLineIndex + 1];
       console.log('Current song:', currentSong);
     })
     .catch((error) => {
@@ -156,6 +154,7 @@ function sendGuess() {
   } else {
     document.getElementById("messageBox").style.display = "block";
     document.getElementById("guesses").style.display = "block";
+    document.getElementById("guessCount").style.display = "block";
     
     if (!currentSong) {
       showMessage('Please wait for the song to load');
@@ -172,6 +171,7 @@ function sendGuess() {
 
     // Check if the guess is correct
     if (userGuess === currentSong.name.toLowerCase()) {
+      document.getElementById("guess" + currentGuesses.toString()).innerHTML += ' (correct song)';
       showMessage('Correct!');
       document.getElementById('messageBox').style.backgroundColor = 'green'; 
       document.getElementById('send').disabled = true;
@@ -184,24 +184,12 @@ function sendGuess() {
         showMessage(`Game Over! The song was "${currentSong.name}"`);
         return;
       }
-
-      // Show next lines if available
-      const lines = [];
-      let i = 0;
-      while (currentSong[`line${i}`] !== undefined) {
-        lines.push(currentSong[`line${i}`]);
-        i++;
-      }
-      
-      let availableLines = lines;
-      if (lines.length > 12) {
-        availableLines = lines.slice(0, -12); // Remove the last 12 lines from consideration
-      }
-
-      if (currentGuesses < MAX_GUESSES && currentGuesses < availableLines.length) {
-        let line1 = availableLines[randomLineIndex + currentGuesses * 2];
-        let line2 = availableLines[randomLineIndex + currentGuesses * 2 + 1];
-        document.getElementById(`lyrics${currentGuesses}`).innerText = (line1 || '') + "\n" + (line2 || '');  // Add 2 lines
+      try{
+        let line1 = lines[randomLineIndex + currentGuesses * 2];
+        let line2 = lines[randomLineIndex + currentGuesses * 2 + 1];
+        document.getElementById(`lyrics${currentGuesses}`).innerText = (line1 || '') + "\n" + (line2 || '');
+      }catch(e){
+        alert("Error: " + e);
       }
 
       showMessage('Wrong! Try again');
