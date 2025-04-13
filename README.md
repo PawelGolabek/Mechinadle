@@ -1,4 +1,4 @@
-Mechina band song guessing game.
+Mechinadle is a Mechina band song guessing game.
 
 To run it locally:
 
