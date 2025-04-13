@@ -103,12 +103,6 @@ h1 {
   display: block;
 }
 
-.sideImage {
-  flex-basis: 9%;
-  max-width: 40rem;
-  min-height: 100vh;
-}
-
 .card {
   padding-top: 0em;
   flex-basis: 70%;
@@ -165,3 +159,46 @@ h1 {
   display: none;
 }
 
+.sideImage {
+  max-width: 40rem;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+@media (max-width: 1600px) {
+  .main {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+
+  .sideImage {
+    width: 20vw;
+    min-width: 10vw;
+    object-fit: cover;
+  }
+
+  .center {
+    flex: 1;
+    max-width: 80vw;
+    overflow: hidden;
+  }
+
+  .center2, .lyrics, .hints, .card {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  #lyrics0 {
+    max-height: 30vh;
+  }
+
+  .suggestions-box {
+    width: 100%;
+  }
+}
