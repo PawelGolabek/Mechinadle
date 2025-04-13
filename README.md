@@ -2,7 +2,7 @@ Mechinadle is a Mechina band song guessing game.
 
 To run it locally:
 
-npm install vite
+npm install vite,
 npx vite --port=4001
 
 (or whatever port you intend to run it on).
