@@ -70,7 +70,7 @@ h1 {
   flex-grow: 1;
   padding: 0;
   margin: 0;
-  min-height: 99vh;
+  min-height: 100vh;
 }
 .center {
   margin-top: 1rem;
@@ -79,7 +79,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  max-height: 100vh;
+  max-height: 90vh;
   flex-grow: 1;
 }
 .center2 {
@@ -174,12 +174,22 @@ h1 {
 }
 
 footer {
-  flex-basis: 100%;
-  margin-top: 0;
-  max-height: 1vh;
+  flex-basis: 90%;
+  margin: auto;
+  margin-bottom: 0;
+  max-height: fit-content;
+  min-height: fit-content;
+
 }
 
 @media (max-width: 1600px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+  }
   .main {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -214,5 +224,13 @@ footer {
 
   .suggestions-box {
     width: 100%;
+  }
+  
+  footer {
+    flex-basis: 100%;
+    margin-top: 0;
+    min-height: fit-content;
+    max-height: fit-content;
+
   }
 }
