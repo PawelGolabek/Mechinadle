@@ -4,43 +4,50 @@ document.querySelector('#app').innerHTML = `
   <div class ="container">
     <div class="main">
       <img src = "e.png" alt = "Tessera"  class="sideImage">
-      <div class="center">
-        <div class ="header">
-          <h1>Mechinadle</h1>
-          <h2 id="modeTitle">Daily Challenge</h2>
+      <div class="content">
+        <div class="center">
+          <div class ="header">
+            <h1>Mechinadle</h1>
+            <h2 id="modeTitle">Daily Challenge</h2>
+          </div>
+          <div class="center2">
+            <br>
+            <div class="lyrics">
+              <p>Lyrics:</p>
+              <p id="lyrics0"></p>
+              <p id="lyrics1"></p>
+              <p id="lyrics2"></p>
+              <p id="lyrics3"></p>
+              <p id="lyrics4"></p>
+              <p id="lyrics5"></p>
+            </div>
+            <div class="hints">
+              <p id="guesses" class="guesses">Your guesses:</p>
+              <div id="guess0"></div>
+              <div id="guess1"></div>
+              <div id="guess2"></div>
+              <div id="guess3"></div>
+              <div id="guess4"></div>
+            </div>
+            <div class="card">
+              <p>Guess the song:</p>
+              <input type="text" id="songInput" placeholder="Enter song name">
+              <button id="send" type="button">Send</button>
+              <div id="suggestions" class="suggestions-box"></div>
+              <div id="guessCount" class="guesses">Guesses remaining: 5</div>
+              <div id="messageBox" class="message-box"></div>
+              <button id="nextSong" style="display:none;">Next Song</button>
+              <button id="modeToggle">Switch to Random Mode</button>
+            </div>
+            <p id="dailyStreakDisplay" class = "score" >Daily Streak: 0</p>
+            <p id="streakDisplay" class = "score" >Current Random Streak: 0</p>
+          </div>
         </div>
-        <div class="center2">
-          <br>
-          <div class="lyrics">
-            <p>Lyrics:</p>
-            <p id="lyrics0"></p>
-            <p id="lyrics1"></p>
-            <p id="lyrics2"></p>
-            <p id="lyrics3"></p>
-            <p id="lyrics4"></p>
-            <p id="lyrics5"></p>
-          </div>
-          <div class="hints">
-            <p id="guesses" class="guesses">Your guesses:</p>
-            <div id="guess0"></div>
-            <div id="guess1"></div>
-            <div id="guess2"></div>
-            <div id="guess3"></div>
-            <div id="guess4"></div>
-          </div>
-          <div class="card">
-            <p>Guess the song:</p>
-            <input type="text" id="songInput" placeholder="Enter song name">
-            <button id="send" type="button">Send</button>
-            <div id="suggestions" class="suggestions-box"></div>
-            <div id="guessCount" class="guesses">Guesses remaining: 5</div>
-            <div id="messageBox" class="message-box"></div>
-            <button id="nextSong" style="display:none;">Next Song</button>
-            <button id="modeToggle">Switch to Random Mode</button>
-          </div>
-          <p id="dailyStreakDisplay" class = "score" >Daily Streak: 0</p>
-          <p id="streakDisplay" class = "score" >Current Random Streak: 0</p>
-        </div>
+        <footer>
+          <p>All artwork and lyrics belong to Mechina. Support Mechina: 
+            <a href = "https://mechinamusic.bandcamp.com/">Bandcamp</a>, <a href = "https://www.mechinamusic.com/">Store</a>
+          </p>
+        </footer>
       </div>
       <img src = "Tessera_32.png" alt = "Tessea" class="sideImage">
     </div>
