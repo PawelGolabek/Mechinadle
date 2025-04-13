@@ -12,7 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.score{
+  padding-top: 0.01rem;
+  flex-basis: 45%;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -31,9 +34,10 @@ body {
 }
 
 h1 {
-  margin: 0;  /* Remove default margin */
-  padding: 1em 0;  /* Add padding to create space around h1 */
-  font-size: 3.2em;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+  font-size: 4em;
   line-height: 1.1;
   text-align: center;
   flex-basis: 80%;
@@ -44,43 +48,57 @@ h1 {
 }
 .container {
   display: flex;
-  flex-direction: column;  /* Stack all child elements vertically */
+  flex-direction: column;
   width: 100%;
-  flex-grow: 1;  /* Make sure container grows to take up the remaining space */
+  flex-grow: 1;
 }
 
 .main {
   display: flex;
   flex-basis: 100%;
   width: 100%;
+  align-items: flex-start;
+}
+#lyrics0 {
+  max-height: 40vh;
+  overflow-y: auto;
+  white-space: pre-line;
 }
 
 .center {
-
-  margin: 1rem;
+  margin-top: 1rem;
   flex-basis: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
+  max-height: 100vh;
 }
 .center2 {
   margin: 1rem;
+  margin-bottom: 0;
   flex-basis: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
 }
 
+.center, .center2 {
+  flex-grow: 0;
+  flex-shrink: 1;
+}
 .lyrics {
-  margin: 1rem;
-  flex-basis: 40%;
+  padding: 0;
+  flex-basis: 60%;
   max-width: 40rem;
   display: block;
 }
 
 .hints {
-  margin: 1rem;
-  flex-basis: 40%;
+  margin: 1px;
+  padding: 0;
+  flex-basis: 30%;
   max-width: 40rem;
   display: block;
 }
@@ -92,8 +110,8 @@ h1 {
 }
 
 .card {
-  padding: 2em;
-  flex-basis: 100%;
+  padding-top: 0em;
+  flex-basis: 70%;
 }
 
 #guessCount {
@@ -146,3 +164,4 @@ h1 {
 .guesses {
   display: none;
 }
+
