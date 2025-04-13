@@ -208,6 +208,8 @@ function sendGuess() {
       }else{
         playerStreak = 0;
         setCookie('playerStreak', playerStreak);
+        randomGameNumber++;
+        setCookie('randomGameNumber', randomGameNumber);
       }
 
       document.getElementById('nextSong').style.display = 'inline-block';
@@ -311,8 +313,6 @@ document.getElementById('nextSong').addEventListener('click', () => {
   }else{
     document.getElementById('nextSong').style.display = 'none';
   }
-  randomGameNumber++;
-  setCookie('randomGameNumber', randomGameNumber);
   loadSong();
 });
 
